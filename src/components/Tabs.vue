@@ -1,25 +1,30 @@
 <template>
-    <div class="tabs-component">
-        <ul role="tablist" class="tabs-component-tabs">
-            <li
-                v-for="(tab, i) in tabs"
-                :key="i"
-                :class="{ 'is-active': tab.isActive, 'is-disabled': tab.isDisabled }"
-                class="tabs-component-tab"
-                role="presentation"
-                v-show="tab.isVisible"
-            >
-                <a v-html="tab.header"
-                   :aria-controls="tab.hash"
-                   :aria-selected="tab.isActive"
-                   @click="selectTab(tab.hash, $event)"
-                   :href="tab.hash"
-                   class="tabs-component-tab-a"
-                   role="tab"
-                ></a>
-            </li>
-        </ul>
-        <div class="tabs-component-panels">
+    <div>
+        <div class="row">
+            <div class="col-sm">
+                <ul id="myTabs" role="tablist" class="nav nav-tabs nav-fill">
+                    <li
+                        v-for="(tab, i) in tabs"
+                        :key="i"
+                        :class="{ 'active': tab.isActive, 'is-disabled': tab.isDisabled }"
+                        class="nav-item tabs-component-tab"
+                        role="presentation"
+                        v-show="tab.isVisible"
+                    >
+                        <a v-html="tab.header"
+                           :aria-controls="tab.hash"
+                           :aria-selected="tab.isActive"
+                           @click="selectTab(tab.hash, $event)"
+                           :href="tab.hash"
+                           class="nav-link"
+                           :class= "{ 'active': tab.isActive }"
+                           role="tab"
+                        ></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content">
             <slot/>
         </div>
     </div>
