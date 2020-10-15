@@ -2,7 +2,7 @@
   "name": "vue-tabs-component",
   "version": "1.5.0",
   "description": "A Vue component to easily render tabs",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config docs/webpack.config.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/spatie/vue-tabs-component.git"
+    "url": "https://github.com/urbics/vue-tabs-component.git"
   },
   "keywords": [
     "spatie"
